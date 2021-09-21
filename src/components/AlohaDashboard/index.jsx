@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import AlohaList from '../AlohaList';
 import userDb from './../../users';
+import AlohaListSelected from './../SelectedUsersList'
 
 class AlohaDashboard extends Component {
   constructor(props) {
@@ -39,7 +40,9 @@ class AlohaDashboard extends Component {
     });
   };
 
+
   render() {
+    
     const { users, isReverseSortOrder } = this.state;
 
     return (
@@ -48,6 +51,9 @@ class AlohaDashboard extends Component {
           Сейчас порядок сортировки {isReverseSortOrder ? 'Обратный' : 'Прямой'}
         </h1>
         <button onClick={this.sortArray}>Сменить порядок</button>
+        <ul>
+          <AlohaListSelected users={users}/>
+        </ul>
         <AlohaList users={users} selectUser={this.selectUser}/>
       </article>
     );
