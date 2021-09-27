@@ -1,0 +1,35 @@
+
+.imgWrapper{
+  max-width: 1080px;
+  max-height: 500px;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 100px;
+  background-color: lawngreen;
+  
+}
+.img{
+  margin: 0 auto;
+  max-width: inherit;
+  max-height: inherit;
+}
+
+.prevBtn, .nextBtn{
+  display: inline-block;
+  border-radius: 20px;
+  border: 0px;
+  height: 40px;
+  background-color: rgb(160, 244, 255);
+  margin-top: 240px;
+  position: relative;
+}
+.prevBtn{
+  left: 60px;
+}
+
+
+.nextBtn{
+  right: 60px;
+}
+
