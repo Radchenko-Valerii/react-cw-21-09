@@ -3,17 +3,25 @@ import data from '../../Data';
 import styles from './carusel.module.scss'
 
 class Carusel extends Component {
+  constructor(props){
+    super(props);
+    this.state ={
+      i : 0,
+    }
+  }
+  
   render() {
-    const {src} = data[0]
+    const {i} = this.state
+    const {src, description, header} = data[i]
     return (
-      <div >
+      <div className={styles.caruselWrapper}>
         <div className={styles.imgWrapper}>
           <button className={styles.prevBtn}>{'<'}</button>
           <img className={styles.img} src={src} alt="" />
-          <button className={styles.nextBtn}>{'>'}</button>
+          <button onClick={()=>{this.setState({i:i+1})}} className={styles.nextBtn}>{'>'}</button>
         </div>
-          <p className='sa'>asdfsdfhsbhfbhsbfsdbfhsdbfbsdbhfab</p>
-
+        <h1 className={styles.header}>{header}</h1>
+          <p className={styles.description}>{description}</p>
       </div>
     );
   }

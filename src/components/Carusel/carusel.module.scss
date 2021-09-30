@@ -1,3 +1,10 @@
+.caruselWrapper{
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 100px;
+}
 
 .imgWrapper{
   max-width: 1080px;
@@ -5,10 +12,9 @@
   display: flex;
   margin: 0 auto;
   position: relative;
-  padding-top: 100px;
-  background-color: lawngreen;
   
 }
+
 .img{
   margin: 0 auto;
   max-width: inherit;
@@ -31,5 +37,19 @@
 
 .nextBtn{
   right: 60px;
+}
+
+.header{
+  padding-top: 10px;
+  text-align: center;
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.description{
+  text-align: center;
+  max-width: 950px;
+  padding: 25px 10px 25px 10px;
+  margin: 0 auto;
 }
 
