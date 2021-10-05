@@ -32,7 +32,7 @@ class Carusel extends Component {
   }
 
   componentDidUpdate(){
-    const int = () => setTimeout(()=>{this.nextSlide()}, 10000)
+    const int = () => setTimeout(()=>{this.nextSlide()}, 5000)
     if(this.state.isAutoSlide){
       int()
     } else {
