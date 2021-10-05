@@ -32,11 +32,11 @@ class Carusel extends Component {
   }
 
   componentDidUpdate(){
-    const int = () => setInterval(()=>{this.nextSlide()}, 1000)
+    const int = () => setTimeout(()=>{this.nextSlide()}, 10000)
     if(this.state.isAutoSlide){
       int()
     } else {
-      clearInterval(int)
+      clearTimeout(int)
     }
   }
 
