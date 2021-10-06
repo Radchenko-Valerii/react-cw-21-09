@@ -1,16 +1,13 @@
 
 import { Component } from "react";
-import Carusel from "./components/Carusel";
+import StopWatch from "./components/StopWatch";
 
 
 
 
 class App extends Component {
-
-
   render() {
-    
-    return <Carusel />;
+    return <StopWatch />
   }
 }
 
