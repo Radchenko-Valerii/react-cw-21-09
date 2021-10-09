@@ -1,17 +1,10 @@
-
-import { Component } from "react";
-import Carusel from "./components/Carusel";
-
+import React from 'react';
+import Calendar from './components/Calendar';
 
 
 
-class App extends Component {
-
-
-  render() {
-    
-    return <Carusel />;
-  }
+const App = () => {
+  return <Calendar/>
 }
 
 export default App;
