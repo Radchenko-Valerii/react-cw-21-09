@@ -2,7 +2,7 @@ import React from 'react';
 
 const NameOfDays = () => {
   return (
-    <div>
+    <div style={{display: 'flex', justifyContent: 'space-around'}}>
       <h3>
         Sun
       </h3>
