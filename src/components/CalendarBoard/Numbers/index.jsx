@@ -12,7 +12,7 @@ const Numbers = () => {
   for(let i = 0; i <= numbers; i++){
     daysArr.push(i)
   }
-  const newArr = daysArr.map((day)=>{return <p className={getDay(new Date(year, month, day))}>{day}</p>})
+  const newArr = daysArr.map((day)=>{return <p key={day} className={getDay(new Date(year, month, day))}>{day}</p>})
   return (
     <div style={{display:"flex", justifyContent:"space-around"}}>
       {newArr}

@@ -1,31 +1,13 @@
-import React from 'react';
+import React from "react";
+import { addDays, startOfWeek, format } from "date-fns";
 
-const NameOfDays = () => {
-  return (
-    <div style={{display: 'flex', justifyContent: 'space-around'}}>
-      <h3>
-        Sun
-      </h3>
-      <h3>
-        Mon
-      </h3>
-      <h3>
-        Tue
-      </h3>
-      <h3>
-        Wed
-      </h3>
-      <h3>
-        Thu
-      </h3>
-      <h3>
-        Fri
-      </h3>
-      <h3>
-        Sat
-      </h3>
-    </div>
-  );
-}
+
+const NameOfDays = ({ currentDay }) => {
+  const start = startOfWeek(currentDay);
+  const namesOfDaysArray = new Array(7).fill(null).map((_, index) => {
+    return <h3 key={index} className="nameOfDays">{format(addDays(start, index), "EEE")}</h3>;
+  });
+  return <div>{namesOfDaysArray}</div>;
+};
 
 export default NameOfDays;
