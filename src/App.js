@@ -1,10 +1,10 @@
 import React from 'react';
-import Calendar from './components/Calendar';
+import ToDoPage from './pages/ToDoPage';
 
 
 
 const App = () => {
-  return <Calendar/>
+  return <ToDoPage />
 }
 
 export default App;
