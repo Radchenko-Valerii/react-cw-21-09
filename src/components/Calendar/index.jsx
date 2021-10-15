@@ -11,10 +11,12 @@ const Calendar = () => {
   return (
     <div className={styles.calendarWrapper}>
       <DateBoard currentDay={currentDay}/>
+      <div className={styles.numbersBoardWrapper}>
       <div className={styles.numbersBoard}>
       <Month currentDay={currentDay}/>
       <NameOfDays currentDay={currentDay}/>
       <Numbers currentDay={currentDay}/>
+      </div>
       </div>
     </div>
     
