@@ -1,0 +1,25 @@
+.dateBoardWrapper{
+  width: 400px;
+  height: 500px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #38CEC4;
+}
+
+.dayName, .date{
+  margin-top: 0;
+  margin-bottom: 0;
+  color: whitesmoke;
+  font-weight: 300;
+}
+
+.dayName{
+  font-size: 35px;
+}
+
+.date{
+  font-size: 200px;
+}
