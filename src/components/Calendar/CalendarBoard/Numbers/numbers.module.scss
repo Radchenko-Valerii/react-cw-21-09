@@ -4,7 +4,13 @@
 }
 
 .numbers{
-  
+  padding: 4px;
   position: absolute;
   color: rgb(116, 116, 116);
+}
+
+.selected{
+  color: #EB1B57;
+  border: 4px solid #EB1B57;
+  border-radius: 100%;
 }
