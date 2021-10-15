@@ -9,8 +9,10 @@ import {
   getWeekOfMonth,
 } from "date-fns";
 import styles from "./numbers.module.scss"
+import classNames from "classnames";
 
-const Numbers = () => {
+const Numbers = (props) => {
+  
   const today = startOfToday();
   const month = getMonth(today);
   const year = getYear(today);
@@ -24,7 +26,7 @@ const Numbers = () => {
   const newArr = daysArr.map((day) => {
     return (
       <h3
-        className={styles.numbers}
+        className={classNames({[styles.selected]: (Number(format(today, "d"))===day)}, {[styles.numbers]: true})}
         key={day}
         style={{
           marginLeft: `${4 * 16.45 * getDay(new Date(year, month, day))}px`,
