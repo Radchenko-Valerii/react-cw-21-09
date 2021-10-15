@@ -13,7 +13,7 @@ const Numbers = () => {
   for(let i = 1; i <= numbers; i++){
     daysArr.push(i)
   }
-  const newArr = daysArr.map((day)=>{return <h3 key={day} style={{position:"absolute", marginLeft: `${16.45*getDay(new Date(year, month, day))}%`, marginTop: `${getWeekOfMonth(new Date(year, month, day))*20}px`}} className={getDay(new Date(year, month, day))} >{day}</h3>})
+  const newArr = daysArr.map((day)=>{return <h3 key={day} style={{position:"absolute", marginLeft: `${16.45*getDay(new Date(year, month, day))}%`, marginTop: `${getWeekOfMonth(new Date(year, month, day))*30}px`}} className={getDay(new Date(year, month, day))} >{day}</h3>})
   return (
     <div style={{display: "flex", flexWrap: "wrap"}}>
       {newArr}
