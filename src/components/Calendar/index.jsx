@@ -1,22 +1,22 @@
 import React from 'react';
-import Month from '../CalendarBoard/Month';
-import NameOfDays from '../CalendarBoard/NamesOfDays';
-import Numbers from '../CalendarBoard/Numbers';
-import DateBoard from '../DateBoard';
+import Month from './CalendarBoard/Month';
+import NameOfDays from './CalendarBoard/NamesOfDays';
+import Numbers from './CalendarBoard/Numbers';
+import DateBoard from './DateBoard';
 import { startOfToday } from 'date-fns';
 
 const Calendar = () => {
   const currentDay = startOfToday();
-  const CalendarContext = React.createContext(currentDay);
   return (
-    <CalendarContext.Provider value={currentDay}>
+    <div>
+      <DateBoard currentDay={currentDay}/>
+      <Month currentDay={currentDay}/>
+      <NameOfDays currentDay={currentDay}/>
+      <Numbers currentDay={currentDay}/>
+
+    </div>
     
-      <DateBoard />
-      <Month />
-      <NameOfDays />
-      <Numbers />
     
-    </CalendarContext.Provider>
   );
 }
 
