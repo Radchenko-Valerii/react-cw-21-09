@@ -8,6 +8,7 @@ import {
   getYear,
   getWeekOfMonth,
 } from "date-fns";
+import styles from "./numbers.module.scss"
 
 const Numbers = () => {
   const today = startOfToday();
@@ -23,10 +24,10 @@ const Numbers = () => {
   const newArr = daysArr.map((day) => {
     return (
       <h3
+        className={styles.numbers}
         key={day}
         style={{
-          position: "absolute",
-          marginLeft: `${16.45 * getDay(new Date(year, month, day))}%`,
+          marginLeft: `${4 * 16.45 * getDay(new Date(year, month, day))}px`,
           marginTop: `${getWeekOfMonth(new Date(year, month, day)) * 30}px`,
         }}
       >
@@ -34,7 +35,7 @@ const Numbers = () => {
       </h3>
     );
   });
-  return <div style={{ display: "flex", flexWrap: "wrap" }}>{newArr}</div>;
+  return <div className={styles.numbersWrapper}>{newArr}</div>;
 };
 
 export default Numbers;
