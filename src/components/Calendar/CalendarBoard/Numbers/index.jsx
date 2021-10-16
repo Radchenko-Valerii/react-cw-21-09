@@ -7,13 +7,13 @@ import {
   getYear,
   getWeekOfMonth,
 } from "date-fns";
-import styles from "./numbers.module.scss"
+import styles from "./numbers.module.scss";
 import classNames from "classnames";
 import { CalendarContext } from "../../../../contexts";
 import { useContext } from "react/cjs/react.development";
 
 const Numbers = (props) => {
-  const [today, setToday] = useContext(CalendarContext)
+  const [today, setToday, selected, setSelected] = useContext(CalendarContext);
   const month = getMonth(today);
   const year = getYear(today);
   const numbers = getDaysInMonth(Number(format(today, "L")));
@@ -21,14 +21,23 @@ const Numbers = (props) => {
   for (let i = 1; i <= numbers; i++) {
     daysArr.push(i);
   }
+
   const newArr = daysArr.map((day) => {
+    const date = new Date(year, month, day);
     return (
       <h3
-        className={classNames({[styles.selected]: (Number(format(today, "d"))===day)}, {[styles.numbers]: true})}
+        onClick={() => {
+          setSelected(date);
+        }}
+        className={classNames(
+          { [styles.today]: Number(format(today, "d")) === day },
+          { [styles.selected]: Number(format(selected, "d")) === day },
+          { [styles.numbers]: true }
+        )}
         key={day}
         style={{
-          marginLeft: `${65.8 * getDay(new Date(year, month, day))}px`,
-          marginTop: `${getWeekOfMonth(new Date(year, month, day)) * 32}px`,
+          marginLeft: `${65.8 * getDay(date)}px`,
+          marginTop: `${getWeekOfMonth(date) * 32}px`,
         }}
       >
         {day}
