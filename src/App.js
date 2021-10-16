@@ -6,9 +6,10 @@ import { CalendarContext } from "./contexts";
 
 const App = () => {
   const [today, setToday] = useState(startOfToday())
+  const [selected, setSelected] = useState(today)
   return (
     <>
-      <CalendarContext.Provider value={[today, setToday]}>
+      <CalendarContext.Provider value={[today, setToday, selected, setSelected]}>
         <Calendar />
       </CalendarContext.Provider>
     </>
