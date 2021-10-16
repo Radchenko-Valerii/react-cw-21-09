@@ -4,13 +4,11 @@ import Month from './CalendarBoard/Month';
 import NameOfDays from './CalendarBoard/NamesOfDays';
 import Numbers from './CalendarBoard/Numbers';
 import DateBoard from './DateBoard';
-import { startOfToday } from 'date-fns';
 import styles from "./calendar.module.scss"
 import { CalendarContext } from '../../contexts';
 
 const Calendar = () => {
-  const currentDay = startOfToday();
-  const [today, setToday] = useContext(CalendarContext)
+  const [today] = useContext(CalendarContext)
   return (
     <div className={styles.calendarWrapper}>
       <DateBoard currentDay={today}/>

@@ -12,8 +12,8 @@ import classNames from "classnames";
 import { CalendarContext } from "../../../../contexts";
 import { useContext } from "react/cjs/react.development";
 
-const Numbers = (props) => {
-  const [today, setToday, selected, setSelected] = useContext(CalendarContext);
+const Numbers = () => {
+  const [today, , selected, setSelected] = useContext(CalendarContext);
   const month = getMonth(today);
   const year = getYear(today);
   const numbers = getDaysInMonth(Number(format(today, "L")));
