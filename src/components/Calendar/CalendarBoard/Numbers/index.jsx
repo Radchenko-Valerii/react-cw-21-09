@@ -1,7 +1,6 @@
 import React from "react";
 import {
   getMonth,
-  startOfToday,
   format,
   getDaysInMonth,
   getDay,
@@ -10,16 +9,15 @@ import {
 } from "date-fns";
 import styles from "./numbers.module.scss"
 import classNames from "classnames";
+import { CalendarContext } from "../../../../contexts";
+import { useContext } from "react/cjs/react.development";
 
 const Numbers = (props) => {
-  
-  const today = startOfToday();
+  const [today, setToday] = useContext(CalendarContext)
   const month = getMonth(today);
   const year = getYear(today);
-  const monthNumber = format(today, "L");
-  const numbers = getDaysInMonth(Number(monthNumber));
+  const numbers = getDaysInMonth(Number(format(today, "L")));
   const daysArr = [];
-  console.log(today);
   for (let i = 1; i <= numbers; i++) {
     daysArr.push(i);
   }
@@ -30,7 +28,7 @@ const Numbers = (props) => {
         key={day}
         style={{
           marginLeft: `${4 * 16.45 * getDay(new Date(year, month, day))}px`,
-          marginTop: `${getWeekOfMonth(new Date(year, month, day)) * 30}px`,
+          marginTop: `${getWeekOfMonth(new Date(year, month, day)) * 32}px`,
         }}
       >
         {day}

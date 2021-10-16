@@ -1,13 +1,15 @@
 import React from 'react';
 import { startOfToday, format } from 'date-fns';
 import styles from "./month.module.scss"
+import { CalendarContext } from '../../../../contexts';
+import { useContext } from 'react/cjs/react.development';
 
 const Month = () => {
-  const todayMonth = startOfToday();
+  const [today, setToday] = useContext(CalendarContext)
 
   return (
     <div>
-      <h2 className={styles.monthName}>{format(todayMonth, 'MMMM')}</h2>
+      <h2 className={styles.monthName}>{format(today, 'MMMM')}</h2>
     </div>
   );
 }
