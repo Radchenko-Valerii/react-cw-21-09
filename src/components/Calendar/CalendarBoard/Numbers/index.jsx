@@ -27,7 +27,7 @@ const Numbers = (props) => {
         className={classNames({[styles.selected]: (Number(format(today, "d"))===day)}, {[styles.numbers]: true})}
         key={day}
         style={{
-          marginLeft: `${4 * 16.45 * getDay(new Date(year, month, day))}px`,
+          marginLeft: `${65.8 * getDay(new Date(year, month, day))}px`,
           marginTop: `${getWeekOfMonth(new Date(year, month, day)) * 32}px`,
         }}
       >
