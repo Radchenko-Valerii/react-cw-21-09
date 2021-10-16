@@ -10,6 +10,12 @@
 }
 
 .selected{
+  border: 2px solid green;
+  color: green;
+  border-radius: 100%;
+}
+
+.today{
   color: #EB1B57;
   border: 4px solid #EB1B57;
   border-radius: 100%;
