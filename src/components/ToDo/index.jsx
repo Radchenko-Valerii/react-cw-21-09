@@ -16,11 +16,11 @@ const ToDo = () => {
 
   const addTasks = (text) => {
     const newTask = {
-      id: data.length +1,
+      id: Date.now(),
       text: text,
       isDone: false
     }
-    const newTasks = [...data, newTask];
+    const newTasks = [...tasks, newTask];
     setTasks(newTasks);
   }
 
@@ -31,16 +31,17 @@ const ToDo = () => {
   }
 
 
-  const tasksArray = data.map((obj) => {
+  const tasksArray = tasks.map((obj) => {
     const checkboxClass = classNames({checked: obj.isDone, checkbox: true})
     return (
       <label>
         <Field className={checkboxClass} type="checkbox" name="text" id={obj.id} defaultChecked={obj.isDone} />
-        {obj.text}
+        <ol> {obj.text} </ol> 
       </label>
     );
   });
 
+  console.log(tasks)
   return (
     <div>
       <h1>ToDo</h1>
@@ -51,15 +52,16 @@ const ToDo = () => {
         </Form>
       </Formik>
       <ul>
-        {tasks.map((task)=>{return task.text})}
+        
+        {/* {tasks.map((task)=>{return <li>{task.text}</li>})} */}
       </ul>
 
-      {/* <Formik initialValues={{id:'', text:'', isDone: ''}}>
+      <Formik initialValues={{id:'', text:'', isDone: ''}}>
         {({ values }) => {
           return <Form>{tasksArray}
           </Form>;
         }}
-      </Formik> */}
+      </Formik>
     </div>
   );
 };
