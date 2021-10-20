@@ -1,7 +1,8 @@
-import { Formik, Field, Form, formikBag } from "formik";
+import { Formik, Field, Form} from "formik";
 import React from "react";
 import { useState } from "react";
 import classNames from "classnames";
+import styles from "./toDo.module.scss";
 
 const ToDo = () => {
   const [tasks, setTasks] = useState([]);
@@ -25,12 +26,12 @@ const ToDo = () => {
   
 
   const tasksArray = tasks.map((obj) => {
-    const checkboxClass = classNames({ checked: obj.isDone, checkbox: true });
+    const checkboxClasses = classNames({ [styles.checked]: obj.isDone, [styles.checkbox]: true });
     return (
       <label key={obj.id}>
-        <ol>
+        <ol className={checkboxClasses}>
           <Field
-            className={checkboxClass}
+            
             type="checkbox"
             name="text"
             id={obj.id}
@@ -43,7 +44,7 @@ const ToDo = () => {
           {obj.text}
           <button
             type="button"
-            onClick={({id}) => {
+            onClick={() => {
               obj.isExist = false;
               setTasks(tasks.filter((task) => task.isExist));
             }}
