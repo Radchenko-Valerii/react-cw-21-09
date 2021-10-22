@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Field, Form} from "formik";
+import { Formik, Field, Form, ErrorMessage} from "formik";
 import { useContext } from 'react/cjs/react.development';
 import { ToDoContext } from '../../../contexts';
 import styles from "./toDoAdder.module.scss";
@@ -34,6 +34,9 @@ const ToDoAdder = () => {
           <button className={styles.button} name="submit" type="submit">
             add
           </button>
+          <ErrorMessage name="taskText" >
+            {(message) => <div style={{color:'red', position: 'absolute'}}>{message}</div>}
+          </ErrorMessage>
         </Form>
       </Formik>
     </div>
