@@ -9,9 +9,11 @@ const ToDoList = () => {
   const [tasks, setTasks] = useContext(ToDoContext)
 
   const tasksArray = tasks.map((obj) => {
-    const checkboxClasses = classNames({ [styles.checked]: obj.isDone, [styles.checkbox]: true });
+    const checkboxClasses = classNames({[styles.checkbox]: true });
+    const checkboxText = classNames({ [styles.checked]: obj.isDone, [styles.checkboxText]: true })
     return (
       <label key={obj.id}>
+        <div className={styles.checkboxWrapper}>
         <ol className={checkboxClasses}>
           <Field
             className={styles.checkbox}
@@ -23,9 +25,10 @@ const ToDoList = () => {
               obj.isDone = !obj.isDone;
               setTasks([...tasks]);
             }}
-          />{" "}
-          {obj.text}
-          <button
+          />
+        </ol>
+        <p className={checkboxText}>{obj.text}</p>
+        <button
             className={styles.button}
             type="button"
             onClick={() => {
@@ -35,7 +38,7 @@ const ToDoList = () => {
           >
             delete
           </button>
-        </ol>
+        </div>
       </label>
     );
   });
