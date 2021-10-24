@@ -10,10 +10,11 @@ const ToDoList = () => {
 
   const tasksArray = tasks.map((obj) => {
     const checkboxClasses = classNames({[styles.checkbox]: true });
-    const checkboxText = classNames({ [styles.checked]: obj.isDone, [styles.checkboxText]: true })
+    const checkboxTextClasses = classNames({ [styles.checked]: obj.isDone, [styles.checkboxText]: true })
+    const checkboxWrapperClasses = classNames({[styles.checkboxWrapper]: true, [styles.checkboxWrapperDone]: obj.isDone})
     return (
       <label key={obj.id}>
-        <div className={styles.checkboxWrapper}>
+        <div className={checkboxWrapperClasses}>
         <ol className={checkboxClasses}>
           <Field
             className={styles.checkbox}
@@ -27,7 +28,7 @@ const ToDoList = () => {
             }}
           />
         </ol>
-        <p className={checkboxText}>{obj.text}</p>
+        <p className={checkboxTextClasses}>{obj.text}</p>
         <button
             className={styles.button}
             type="button"

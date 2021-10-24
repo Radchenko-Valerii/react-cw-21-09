@@ -26,11 +26,12 @@ const ToDoAdder = () => {
 
 
   return (
-    <div>
-      <h1 className={styles.header}>ToDo</h1>
+      <div className={styles.formWrapper}>
+      <h1 className={styles.header}>What you gonna do today?</h1>
+
       <Formik validationSchema={TODO_SCHEMA} initialValues={{ taskText: "" }} onSubmit={submitHandler}>
-        <Form>
-          <Field className={styles.input} name="taskText" placeholder="enter task" />
+        <Form style={{width: "400px"}}>
+          <Field className={styles.input} name="taskText" placeholder="Enter new task" />
           <button className={styles.button} name="submit" type="submit">
             add
           </button>
@@ -39,7 +40,8 @@ const ToDoAdder = () => {
           </ErrorMessage>
         </Form>
       </Formik>
-    </div>
+      </div>
+    
   );
 }
 
