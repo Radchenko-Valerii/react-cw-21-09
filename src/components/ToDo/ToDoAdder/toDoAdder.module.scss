@@ -1,5 +1,5 @@
 .button{
-  background-color: #4CAF50;
+  background:  linear-gradient(to top left, rgb(123, 202, 212), rgb(209, 95, 114));
     border: none;
     border-radius: 5px;
     color: white;
@@ -10,9 +10,17 @@
     font-size: 16px;
 }
 
+.button:hover{
+  transition: 0.9s;
+  background: linear-gradient(to top left, rgb(26, 228, 255), rgb(251, 62, 93));
+  -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
 .header{
   display: inline-block;
-  color: #4CAF50;
+  color: #CC6578;
+  text-shadow: #7FC5CF  3px 3px 3px;
   width: 400px;
   text-align: center;
 }
