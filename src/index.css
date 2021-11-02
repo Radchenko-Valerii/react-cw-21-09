@@ -19,22 +19,9 @@ code {
   animation: giu-loader .5s forwards;
 }
 
-.task-enter-active{
-  animation: giu-loader .5s forwards;
-}
-
 .exit{
   animation: giu-loader .5s reverse;
 }
-
-.task-exit-active{
-  animation: giu-loader .5s reverse;
-}
-
-
-
-
-
 
 
 @keyframes giu-loader{
