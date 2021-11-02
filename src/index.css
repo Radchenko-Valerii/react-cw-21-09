@@ -20,19 +20,32 @@ code {
 }
 
 .exit{
-  animation: giu-loader .5s reverse;
+  animation: giu-unmount .5s reverse;
 }
 
 
 @keyframes giu-loader{
   0%{
     opacity: 0;
-    transform: translateY(-200px);
+    transform: translateY(-300px);
   }
   50%{
     opacity: 1;
   }
   100%{
     transform: translateY(0px);
+  }
+}
+
+@keyframes giu-unmount{
+  0%{
+    opacity: 0;
+    transform: translateX(300px);
+  }
+  50%{
+    opacity: 1;
+  }
+  100%{
+    transform: translateX(0px);
   }
 }
