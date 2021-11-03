@@ -4,6 +4,7 @@ import { useContext } from 'react/cjs/react.development';
 import { ToDoContext } from '../../../contexts';
 import styles from "./toDoAdder.module.scss";
 import { TODO_SCHEMA } from '../../../utils/validationSchema';
+import 'animate.css';
 
 const ToDoAdder = () => { 
   const [tasks, setTasks] = useContext(ToDoContext)
@@ -26,8 +27,8 @@ const ToDoAdder = () => {
 
 
   return (
-      <div className={styles.formWrapper}>
-      <h1 className={styles.header}>What you gonna do today?</h1>
+      <div className={`${styles.formWrapper} animate__animated animate__zoomIn`}>
+      <h1 className={`${styles.header}`}>What you gonna do today?</h1>
 
       <Formik validationSchema={TODO_SCHEMA} initialValues={{ taskText: "" }} onSubmit={submitHandler}>
         <Form style={{width: "400px"}}>

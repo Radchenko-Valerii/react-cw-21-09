@@ -1,4 +1,5 @@
 .button{
+  cursor: pointer;
   background:  linear-gradient(to top left, rgb(123, 202, 212), rgb(209, 95, 114));
     border: none;
     border-radius: 5px;
@@ -13,6 +14,7 @@
 .button:hover{
   transition: 0.9s;
   background: linear-gradient(to top left, rgb(26, 228, 255), rgb(251, 62, 93));
+  animation: btn-animation .5s forwards;
 }
 
 .header{
@@ -37,4 +39,22 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+@keyframes btn-animation{
+  0%{
+    transform: rotate(0);
+  }
+  25%{
+    transform: rotate(5deg)
+  }
+  50%{
+    transform: rotate(-5deg)
+  }
+  75%{
+    transform: rotate(5deg)
+  }
+  100%{
+    transform: rotate(0);
+  }
 }
