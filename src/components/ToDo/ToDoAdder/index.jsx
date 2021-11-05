@@ -37,7 +37,7 @@ const ToDoAdder = () => {
             add
           </button>
           <ErrorMessage name="taskText" >
-            {(message) => <div style={{color:'red', position: 'absolute'}}>{message}</div>}
+            {(message) => <div className={`animate__animated animate__bounceIn`} style={{color:'red', position: 'absolute'}}>{message}</div>}
           </ErrorMessage>
         </Form>
       </Formik>
