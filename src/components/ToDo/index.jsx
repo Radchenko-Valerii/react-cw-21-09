@@ -7,7 +7,7 @@ import ToDoList from "./ToDoList";
 const ToDo = () => {
   const [tasks, setTasks] = useState([]);
   return (
-    <div>
+    <div className="ToDoComponent">
       <ToDoContext.Provider value={[tasks, setTasks]}>
         <ToDoAdder />
         <ToDoList />
